@@ -1,0 +1,652 @@
+@font-face {
+    font-family: Electrolize;
+    src: url("../fonts/Electrolize-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url(../fonts/PressStart2P-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Merriweather-Regular;
+    src: url("../fonts/Merriweather-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: fill;
+    z-index: -3;
+}
+
+.instagram-icon {
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    width: 3vmax;
+    height: 3vmax;
+    opacity: 1;
+    transition: 0.5s ease;
+    border-radius: 80px;
+}
+
+.instagram-icon:hover {
+    opacity: 0.5;
+    background-color: rgb(158, 255, 1);
+    border-radius: 80px;
+}
+
+.facebook-icon {
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    width: 3vmax;
+    height: 3vmax;
+    opacity: 1;
+    transition: 0.5s ease;
+    border-radius: 80px;
+}
+
+.facebook-icon:hover {
+    opacity: 0.5;
+    background-color: rgb(158, 255, 1);
+    border-radius: 80px;
+}
+
+h2.homepage {
+    position: relative;
+    top: -7vmax;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5vw;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 15px;
+}
+
+nav {
+    width: 60%;
+    position: fixed;
+    top: 0%;
+    left: 30%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    background-color: #151027;
+    height: 130%;
+    width: 120vw;
+    z-index: -1;
+}
+
+.hover-this {
+    transition: all 0.3s ease;
+}
+
+.logo {
+    position: absolute;
+    width: 30%;
+    height: 250%;
+    left: -42%;
+    top: -65%;
+}
+
+span {
+    display: inline-block;
+    font-family: "Courier New", monospace;
+    color: rgb(255, 255, 255);
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+    z-index: -1;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 0.3rem;
+    background-color: rgba(255, 255, 255, 0.363);
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    width: 2rem;
+    height: 2rem;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hover-this:hover~.cursor {
+    transform: translate(-50%, -50%) scale(2);
+}
+
+
+/* About Section */
+
+#about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 100%;
+    background-color: #151027;
+    color: white;
+}
+
+.header-border {
+    position: relative;
+    width: 40vmax;
+    height: 18vmax;
+    right: -30%;
+}
+
+@media screen and (max-width: 992px) {
+    .header-border {
+        width: 50%;
+    }
+}
+
+#about h1 {
+    text-align: center;
+    font-family: "Electrolize";
+    font-size: 3vmax;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -12vmax;
+}
+
+@media screen and (max-width: 992px) {
+    h1 {
+        width: 110%;
+    }
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.about img {
+    width: 23vmax;
+    height: 21vmax;
+    position: relative;
+    left: 20%;
+    top: -10vh;
+}
+
+.name {
+    font-family: "PressStart";
+    position: relative;
+    left: 30%;
+    top: -10vh;
+    width: 30%;
+}
+
+.name h2 {
+    display: inline;
+    font-size: 2.5vmax;
+}
+
+.blinking {
+    display: inline;
+    animation: blinkingText 1s infinite;
+}
+
+@keyframes blinkingText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.name p {
+    font-family: "PressStart";
+    font-size: 1.2vmax;
+}
+
+
+/* Education Section */
+
+#education {
+    position: relative;
+    font-family: "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+    background-color: #151027;
+    height: 100%;
+}
+
+#education h1 {
+    text-align: center;
+    font-family: "Electrolize";
+    font-size: 3vmax;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -12vmax;
+}
+
+.education-columns {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10%;
+}
+
+.education-box {
+    position: relative;
+    top: -50%;
+    width: 30vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.education-box h2 {
+    color: #f1c4f5;
+    font-family: Electrolize;
+    font-size: 1.6vmax;
+    margin-bottom: 20px;
+}
+
+.education-box p {
+    color: white;
+    font-size: 1.2vmax;
+}
+
+
+/* Skills Section */
+
+#skills {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #151027;
+    height: 100%;
+}
+
+#skills h1 {
+    text-align: center;
+    font-family: "Electrolize";
+    font-size: 3vmax;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -12vmax;
+}
+
+.linear-wipe {
+    text-align: center;
+    background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: shine 1s linear infinite;
+    animation: shine 1s linear infinite;
+}
+
+@-webkit-keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.block-content {
+    min-height: 100%;
+}
+
+.content h3 {
+    font-size: 3.5vmax;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #fff;
+}
+
+@media all and (min-width: 40em) {
+    .content h3 {
+        font-size: 2.1vmax;
+    }
+}
+
+h3 {
+    font-family: "Merriweather-Regular";
+    font-weight: 900;
+}
+
+p {
+    font-family: "Merriweather-Regular";
+    line-height: 1.5;
+}
+
+.l-block-spacing {
+    min-height: 80vh;
+    padding: 2em 0 4em 0;
+}
+
+.l-contained {
+    position: relative;
+    top: -8vmax;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+@media all and (min-width: 40em) {
+    .l-contained {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+.skill-list {
+    padding-bottom: 1em;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.skill-list:before {
+    content: "";
+    border-left: 5px solid #CCC;
+    left: -0.25em;
+    top: 2em;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    transform-origin: 0 0;
+}
+
+.skill-list:after {
+    content: "";
+    clear: both;
+    position: absolute;
+    bottom: 0px;
+    left: -1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #DDD;
+    border: 5px solid #DDD;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.t-block-teal {
+    background: #151027;
+}
+
+.t-block-teal h3 {
+    color: #f7b258;
+}
+
+.t-block-teal p {
+    color: #00ffee;
+}
+
+.skill-list li {
+    margin: 0 0 3em 0;
+    padding: 0 2em 0em 2em;
+    position: relative;
+}
+
+.skill-list li:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -3.85em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #151027;
+    border: 5px solid #fff;
+}
+
+
+/* Experience Section */
+
+#experience {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 100%;
+    background-color: #151027;
+    color: white;
+    font-size: 0.8vmax;
+}
+
+#experience h1 {
+    text-align: center;
+    font-family: "Electrolize";
+    font-size: 3vmax;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -12vmax;
+}
+
+.line {
+    position: relative;
+    top: -5vmax;
+    margin: 0 auto;
+    max-width: 70vw;
+}
+
+.line:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border: 1px solid hotpink;
+    right: 40px;
+    top: 0;
+}
+
+.line:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (min-width: 700px) {
+    .line {
+        padding: 2rem;
+    }
+    .line:before {
+        left: calc(50% - 1px);
+        right: auto;
+    }
+}
+
+.line_item {
+    padding: 1rem;
+    border: 2px solid hotpink;
+    border-image: linear-gradient(to right, skyblue 0%, hotpink 100%);
+    border-image-slice: 1;
+    position: relative;
+    margin: 1rem 3rem 1rem 1rem;
+    clear: both;
+}
+
+.line_item:after,
+.line_item:before {
+    content: "";
+    position: absolute;
+}
+
+.line_item:before {
+    right: -10px;
+    top: calc(50% - 5px);
+    border-style: solid;
+    border-color: hotpink hotpink transparent transparent;
+    border-width: 10px;
+    transform: rotate(45deg);
+}
+
+@media screen and (min-width: 700px) {
+    .line_item {
+        width: 44%;
+        margin: 1rem;
+    }
+    .line_item:nth-of-type(2n) {
+        float: right;
+        margin: 1rem;
+        border-image: linear-gradient(to right, hotpink 0%, skyblue 100%);
+        border-image-slice: 1;
+    }
+    .line_item:nth-of-type(2n):before {
+        right: auto;
+        left: -10px;
+        border-color: transparent transparent hotpink hotpink;
+    }
+}
+
+.line-item-holder {
+    text-align: center;
+    max-width: 17vmax;
+    height: 5vmax;
+    margin: 0 48px 0 auto;
+    font-size: 1.8rem;
+    background-color: rgb(0, 0, 0);
+    line-height: 1;
+    border-image: none;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.line-item-holder:before {
+    display: none;
+}
+
+@media screen and (min-width: 700px) {
+    .line-item-holder {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .line-item-holder:nth-of-type(2n) {
+        float: none;
+        margin: 0 auto;
+        border-image: none;
+    }
+    .line-item-holder:nth-of-type(2n):before {
+        display: none;
+    }
+}
+
+.line_title {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-size: 1vmax;
+}
+
+.line h2 {
+    font-family: PressStart;
+    font-size: 1.5vmax;
+    line-height: 2.5vmax;
+}
+
+.line a {
+    font-family: Electrolize;
+    font-size: 1.2vmax;
+}
+
+
+/* Contact Section */
+
+#contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #151027;
+    height: 100%;
+}
+
+#contact h1 {
+    text-align: center;
+    font-family: "Electrolize";
+    font-size: 3vmax;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -12vmax;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -8vmax;
+}
+
+.input {
+    padding: 15px 20px;
+    margin: 15px;
+    width: 30.5%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+}
+
+#message {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 40%;
+}
+
+#submit {
+    padding: 15px;
+    margin: 30px;
+    width: 15%;
+    font-size: 1.2vmax;
+    border-radius: 20px;
+    font-family: PressStart;
+    background-color: #000000dc;
+    border-color: white;
+    color: white;
+}
+
+#submit:hover {
+    background-color: rgb(0, 248, 54);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
